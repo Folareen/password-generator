@@ -1,6 +1,5 @@
 body{
     background-color: rgb(4, 17, 43);
-    color: white;
     min-height: 100vh;
     display: flex;
     justify-content: center;
@@ -72,6 +71,7 @@ h3{
     justify-content: space-between;
     text-align: center;
     margin: 20px 0;
+    color: rgb(233, 233, 233);
 }
 label[for="length"]{
     font-size: 1.1rem;

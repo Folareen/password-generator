@@ -1,5 +1,5 @@
-range
-special check
 
-display strength
+display strength and maybe a clear button..
 easy to read
+
+
