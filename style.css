@@ -55,7 +55,8 @@ h3{
 }
 .generated-password .password{
     display: block;
-    width: calc(100% - 39px);
+    width: max-content;
+    max-width: calc(100% - 39px);
     overflow-x: auto;
     font-size: calc(1rem + 10px);
 }

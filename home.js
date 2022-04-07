@@ -53,14 +53,17 @@ function generatePassword(){
     if( passwordLength > 0 && passwordLength <= 4){
         passwordStrength.innerText = "Weak!";
         passwordStrength.style.color = "red";
+        PASSWORD.style.borderBottom = "1px solid red";
     }
     else if(passwordLength > 4 && passwordLength < 8 ){
         passwordStrength.innerText = "Medium!";
         passwordStrength.style.color = "yellow";
+        PASSWORD.style.borderBottom = "1px solid yellow";
     }
     if(passwordLength >= 8){
         passwordStrength.innerText = "Strong!";
         passwordStrength.style.color = "green";
+        PASSWORD.style.borderBottom = "1px solid green";
     }
     CONTAINER.insertBefore(passwordStrength, LENGTH_CONTAINER);
 }
