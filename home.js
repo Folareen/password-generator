@@ -11,7 +11,9 @@ const GENERATE_EASY_PASSWORD_BUTTON = document.getElementById('generate-easy');
 const UPPERCASE_CHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 const LOWERCASE_CHARS = "abcdefghijklmnopqrstuvwxyz";
 const NUMBERS_CHARS = "1234567890";
-const SYMBOLS_CHARS = "`~!@#$%^&*()_-+={[}]|\\;'\"";
+const SYMBOLS_CHARS = "`~!@#$%^&*()_+={[}]|\\;'\"";
+
+GENERATE_PASSWORD_BUTTON.addEventListener('click', generatePassword);
 
 
 
@@ -27,11 +29,10 @@ function include(chars, checkBox){
     }
 }
 
-GENERATE_PASSWORD_BUTTON.addEventListener('click', generatePassword);
-
 function generatePassword(){
+    let optionCount = UPPERCASE.checked + LOWERCASE.checked + NUMBERS.checked + SYMBOLS.checked;
     let generatedPassword = "";
-    for(let i = 0; i < PASSWORD_LENGTH.value; i+=4){
+    for(let i = 0; i < PASSWORD_LENGTH.value; i+=optionCount){
         generatedPassword += include(UPPERCASE_CHARS, UPPERCASE) + include(LOWERCASE_CHARS, LOWERCASE) + include(NUMBERS_CHARS, NUMBERS) + include(SYMBOLS_CHARS, SYMBOLS);
     }
     let password = generatedPassword.slice(0, PASSWORD_LENGTH.value);
