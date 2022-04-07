@@ -1,6 +1,6 @@
 const CONTAINER = document.querySelector('.container');
 const PASSWORD = document.querySelector('.password');
-const COPY = document.querySelector('generated-password button');
+const COPY = document.getElementById('copy-button');
 const LENGTH_CONTAINER = document.querySelector('.length');
 const PASSWORD_LENGTH = document.getElementById('length');
 const UPPERCASE = document.getElementById('uppercase');
@@ -16,7 +16,7 @@ const NUMBERS_CHARS = "1234567890";
 const SYMBOLS_CHARS = "`~!@#$%^&*()_+={[}]|\\;'\"";
 
 GENERATE_PASSWORD_BUTTON.addEventListener('click', generatePassword);
-// COPY.addEventListener('click', copyPassword)
+COPY.addEventListener('click', copyPassword);
 
 
 function include(chars, checkBox){
@@ -55,7 +55,7 @@ function generatePassword(){
         passwordStrength.style.color = "red";
     }
     else if(passwordLength > 4 && passwordLength < 8 ){
-        passwordStrength.innerText = "Medium";
+        passwordStrength.innerText = "Medium!";
         passwordStrength.style.color = "yellow";
     }
     if(passwordLength >= 8){
@@ -65,6 +65,12 @@ function generatePassword(){
     CONTAINER.insertBefore(passwordStrength, LENGTH_CONTAINER);
 }
 
-// function copyPassword(){
-    
-// }
+function copyPassword(){
+    const textArea = document.createElement('textarea');
+    textArea.value = PASSWORD.textContent;
+    document.body.appendChild(textArea);
+    textArea.select();
+    document.execCommand('copy');
+    document.body.removeChild(textArea);
+    alert('Password copied to clipboard!')
+}
