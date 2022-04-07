@@ -15,16 +15,19 @@ body{
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, .2);
+    color: rgb(201, 201, 201);
 }
 
 h3{
     text-align: center;
     font-size: 2rem;
     font-weight: bolder;
+    color: rgb(255, 255, 255);
 }
 
 .generated-password{
     background-color: rgb(3, 13, 36);
+    color: rgb(255, 255, 255);
     padding: 12px;
     height: 52px;
     width: 100%;
