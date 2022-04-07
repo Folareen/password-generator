@@ -1,5 +1,5 @@
 
 display strength and maybe a clear button..
-easy to read
+easy to read(..fetch from a dictionary api)
 
 
