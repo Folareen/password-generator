@@ -83,6 +83,7 @@ label[for="length"]{
     background-color: rgb(78, 48, 3);
     border: none;
     color: rgb(255, 255, 255);
+    text-align: center;
 }
 
 .password-strength{
