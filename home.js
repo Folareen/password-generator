@@ -75,5 +75,5 @@ function copyPassword(){
     textArea.select();
     document.execCommand('copy');
     document.body.removeChild(textArea);
-    alert('Password copied to clipboard!')
+    alert('Password copied to clipboard!');
 }
