@@ -95,7 +95,7 @@ label[for="length"]{
     justify-content: space-between;
 }
 
-button:not(.generated-password button){
+.generate-btn{
     width: 100%;
     margin-bottom: 15px;
     border: none;
@@ -106,7 +106,7 @@ button:not(.generated-password button){
     font-weight: bold;
     font-size: 18px;
 }
-button:not(.generated-password button):hover, button:not(.generated-password button):focus{
+.generate-btn:hover, .generate-btn:focus{
     cursor: pointer;
     box-shadow: 0 0 2px 2px rgba(14, 7, 1, .8);
     transform: scale(.995);

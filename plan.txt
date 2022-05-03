@@ -1,6 +1,0 @@
-
-display strength and maybe a clear button..
-easy to read(..fetch from a dictionary api)
-add slider
-and change checkbox
-
