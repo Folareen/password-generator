@@ -18,6 +18,8 @@ const SYMBOLS_CHARS = "`~!@#$%^&*()_+={[}]|\\;'\"";
 GENERATE_PASSWORD_BUTTON.addEventListener('click', generatePassword);
 GENERATE_EASY_PASSWORD_BUTTON.addEventListener('click', generateEasyToReadPassword)
 COPY.addEventListener('click', copyPassword);
+PASSWORD.addEventListener('cut', () => alert("Password copied to clipboard!"));
+PASSWORD.addEventListener('copy', () => alert("Password copied to clipboard!"));
 
 
 function include(chars, checkBox){
