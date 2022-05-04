@@ -85,12 +85,12 @@ async function generateEasyToReadPassword(){
         await fetch('https://random-words-api.vercel.app/word')
             .then((res) => res.json())
             .then((data) => {
-                if(data[0].word.length > Math.ceil(PASSWORD_LENGTH.value * .8)){
+                if(data[0].word.length > PASSWORD_LENGTH.value ){
                     random = data[0].word;
-                    console.log(random)
                 }else{
                     random = data[0].word;
-                    random += random.repeat((PASSWORD_LENGTH.value * .8) - random.length)
+                    let times = PASSWORD_LENGTH.value - random.length;
+                    random += random.repeat(times)
                 }
             });
     }
@@ -111,11 +111,14 @@ async function generateEasyToReadPassword(){
         for(let i = 0; i < otherCharsLength; i+= 1){
             generatedPassword += include(NUMBERS_CHARS, NUMBERS) + include(SYMBOLS_CHARS, SYMBOLS);
         }
+
+        if( !(LOWERCASE.checked)){
+            generatedPassword = generatedPassword.toLowerCase();
+        }
     
         if(document.querySelector('.password-strength')){
             document.querySelector('.password-strength').remove();
         }
-
 
         PASSWORD.innerText = generatedPassword.slice(0, PASSWORD_LENGTH.value);
 
