@@ -84,17 +84,19 @@ async function generateEasyToReadPassword(){
     let random;
 
     async function getRandom(){
-        await fetch('https://random-words-api.vercel.app/word')
+        await fetch('https://random-word-api.herokuapp.com/word')
             .then((res) => res.json())
             .then((data) => {
-                if(data[0].word.length > PASSWORD_LENGTH.value ){
-                    random = data[0].word;
+                console.log(data[0]);
+                if(data[0].length > PASSWORD_LENGTH.value ){
+                    random = data[0];
                 }else{
-                    random = data[0].word;
+                    random = data[0];
                     let times = PASSWORD_LENGTH.value - random.length;
                     random += random.repeat(times)
                 }
-            });
+            })
+            .catch (()=>{PASSWORD.innerHTML = `<span class="unable">Unable to generate...Please try again.</span>`});
     }
 
     await getRandom();

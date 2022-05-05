@@ -111,3 +111,8 @@ label[for="length"]{
     box-shadow: 0 0 2px 2px rgba(14, 7, 1, .8);
     transform: scale(.995);
 }
+.unable{
+    font-size: 1rem;
+    color: darkslategrey;
+    font-style: italic;
+}
